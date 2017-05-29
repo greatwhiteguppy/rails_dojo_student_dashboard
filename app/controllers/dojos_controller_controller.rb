@@ -18,9 +18,30 @@ class DojosControllerController < ApplicationController
       end
   end
 
+  def show
+      @dojo = Dojo.find(params[:id])
+  end
+
+  def edit
+      @dojo = Dojo.find(params[:id])
+  end
+
   def update
       @dojo = Dojo.find(params[:id])
-      @dojo.update(dojo_params)
+      @dojo.assign_attributes(dojo_params)
+      if @dojo.valid?
+          @dojo.save
+          redirect_to "/dojos"
+      else
+          flash[:errors] = @dojo.errors.full_messages
+      end
+  end
+
+
+  def destroy
+      @dojo = Dojo.find(params[:id]).destroy
+      flash[:success] = "Dojo deleted"
+      redirect_to "/dojos"
   end
 
   private
