@@ -1,7 +1,6 @@
-// Place all the styles related to the DojosController controller here.
+// Place all the styles related to the Students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 * {
     font-family: sans-serif;
 }
@@ -25,12 +24,4 @@ td, th {
 
 tr:nth-child(even) {
     background-color: #dddddd;
-}
-
-#green {
-    color: green;
-}
-
-.link_right {
-    margin-left: 70%;
 }

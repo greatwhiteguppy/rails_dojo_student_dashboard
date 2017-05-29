@@ -20,6 +20,7 @@ class DojosControllerController < ApplicationController
 
   def show
       @dojo = Dojo.find(params[:id])
+      @students = @dojo.students
   end
 
   def edit
@@ -34,6 +35,7 @@ class DojosControllerController < ApplicationController
           redirect_to "/dojos"
       else
           flash[:errors] = @dojo.errors.full_messages
+          redirect_to url_for :controller => "dojos_controller", :action => "edit"
       end
   end
 

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+
+    #students controller 
+    get 'dojos/:dojo_id/students' => 'students#index'
+
+    get 'dojos/:dojo_id/students/new' => 'students#new'
+
+    post 'dojos/:dojo_id/students' => 'students#create'
+
+    get 'dojos/:dojo_id/students/:id' => 'students#show'
+
+    get 'dojos/:dojo_id/students/:id/edit' => 'students#edit'
+
+    put 'dojos/:dojo_id/students/:id' => 'students#update'
+
+    delete 'dojos/:dojo_id/students/:id' => 'students#destroy'
+
+
+    #dojos controller
+
     root 'dojos_controller#index'
 
     get '/dojos' => 'dojos_controller#index'
